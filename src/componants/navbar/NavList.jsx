@@ -1,7 +1,8 @@
-import React from "react";
+import { memo } from "react";
 
-function NavList() {
-    return <div>NavList</div>;
+// eslint-disable-next-line react/prop-types
+function NavList({ children }) {
+    return <ul>{children}</ul>;
 }
 
-export default NavList;
+export default memo(NavList);
