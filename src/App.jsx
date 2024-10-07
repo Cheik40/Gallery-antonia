@@ -4,9 +4,8 @@ import Error from "./pages/error/Error";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Home from "./pages/home/Home";
-import Circus from "./pages/projects/Circus";
-import LesEchappes from "./pages/projects/LesEchappes";
-import CacheCache from "./pages/projects/CacheCache";
+import ProjectsRoutes from "./componants/navbar/sousMenu/ProjectsRoutes";
+import CommissionsAcademieCesarsRoutes from "./componants/navbar/sousMenu/CommissionsAcademieCesarsRoutes";
 
 const Root = () => {
     return (
@@ -28,21 +27,12 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "projets",
-                children: [
-                    {
-                        path: "circus",
-                        element: <Circus />,
-                    },
-                    {
-                        path: "les-echappees",
-                        element: <LesEchappes />,
-                    },
-                    {
-                        path: "cache-cache",
-                        element: <CacheCache />,
-                    },
-                ],
+                path: "/projets/*",
+                element: <ProjectsRoutes />,
+            },
+            {
+                path: "/commissions/*",
+                element: <CommissionsAcademieCesarsRoutes />,
             },
             {
                 path: "/a-propos",
