@@ -1,21 +1,21 @@
 import { Outlet, useRoutes } from "react-router-dom";
-import CommissionCeremonieDesCesars from "../../../pages/commissions/academie-des-cesars/CommissionCeremonieDesCesars";
 import CommissionJardinsVersailles from "../../../pages/commissions/CommissionJardinsVersailles";
 import ClipsRoutes from "../SousSousMenu/ClipsRoutes";
 import CommisionTheatre from "../../../pages/commissions/CommisionTheatre";
+import CommissionsAcademieCesarsRoutes from "../SousSousMenu/CommissionsAcademieCesarsRoutes";
 
 const CommissionRoutes = () => {
     const router = useRoutes([
         {
             path: "accademie-des-cesars",
-            element: <CommissionCeremonieDesCesars />,
+            element: <CommissionsAcademieCesarsRoutes />,
         },
         {
             path: "jardins-versailles",
             element: <CommissionJardinsVersailles />,
         },
         {
-            path: "clip",
+            path: "clips",
             element: <ClipsRoutes />,
         },
         {

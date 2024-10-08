@@ -6,11 +6,11 @@ import SugarPills from "../../../pages/commissions/clips/SugarPills";
 const ClipsRoutes = () => {
     const routes = useRoutes([
         {
-            path: "ceremonie-des-cesars",
+            path: "clips-silver-night",
             element: <CommissionClipsSilverNight />,
         },
         {
-            path: "cesar-lyceen",
+            path: "sugar-pills",
             element: <SugarPills />,
         },
     ]);

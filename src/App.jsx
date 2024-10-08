@@ -5,7 +5,7 @@ import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Home from "./pages/home/Home";
 import ProjectsRoutes from "./componants/navbar/sousMenu/ProjectsRoutes";
-import CommissionsAcademieCesarsRoutes from "./componants/navbar/sousMenu/CommissionsAcademieCesarsRoutes";
+import CommissionRoutes from "./componants/navbar/sousMenu/CommissionRoutes";
 
 const Root = () => {
     return (
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/commissions/*",
-                element: <CommissionsAcademieCesarsRoutes />,
+                element: <CommissionRoutes />,
             },
             {
                 path: "/a-propos",
