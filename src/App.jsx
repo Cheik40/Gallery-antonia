@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import React, { lazy, Suspense } from "react";
-const Navbar = lazy(() => import("./componants/navbar/Navbar"));
+import Header from "./componants/header/Header";
+// const Navbar = lazy(() => import("./componants/navbar/Navbar"));
 const Error = lazy(() => import("./pages/error/Error"));
 const About = lazy(() => import("./pages/about/About"));
 const Contact = lazy(() => import("./pages/contact/Contact"));
@@ -17,7 +18,8 @@ const Scenographie = lazy(() => import("./pages/scenographie/Scenographie"));
 const Root = () => {
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
+            <Header />
             <Outlet />
         </div>
     );

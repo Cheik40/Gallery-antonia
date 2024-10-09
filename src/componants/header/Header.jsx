@@ -1,7 +1,12 @@
-import React from "react";
+import Navbar from "../navbar/Navbar";
 
 function Header() {
-    return <div>Header</div>;
+    return (
+        <header>
+            <div className='brand'>Antonia Le Paih</div>
+            <Navbar />
+        </header>
+    );
 }
 
 export default Header;
