@@ -1,13 +1,18 @@
-import Navbar from "./componants/navbar/Navbar";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Error from "./pages/error/Error";
-import About from "./pages/about/About";
-import Contact from "./pages/contact/Contact";
-import Home from "./pages/home/Home";
-import ProjectsRoutes from "./componants/navbar/sousMenu/ProjectsRoutes";
-import CommissionRoutes from "./componants/navbar/sousMenu/CommissionRoutes";
-import Journal from "./pages/journal/Journal";
-import Scenographie from "./pages/scenographie/Scenographie";
+import React, { lazy, Suspense } from "react";
+const Navbar = lazy(() => import("./componants/navbar/Navbar"));
+const Error = lazy(() => import("./pages/error/Error"));
+const About = lazy(() => import("./pages/about/About"));
+const Contact = lazy(() => import("./pages/contact/Contact"));
+const Home = lazy(() => import("./pages/home/Home"));
+const ProjectsRoutes = lazy(() =>
+    import("./componants/navbar/sousMenu/ProjectsRoutes")
+);
+const CommissionRoutes = lazy(() =>
+    import("./componants/navbar/sousMenu/CommissionRoutes")
+);
+const Journal = lazy(() => import("./pages/journal/Journal"));
+const Scenographie = lazy(() => import("./pages/scenographie/Scenographie"));
 
 const Root = () => {
     return (
@@ -26,38 +31,70 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />,
+                element: (
+                    <Suspense fallback={<div>Loading ...</div>}>
+                        <Home />
+                    </Suspense>
+                ),
             },
             {
                 path: "/projets/*",
-                element: <ProjectsRoutes />,
+                element: (
+                    <Suspense fallback={<div>Loading ...</div>}>
+                        <ProjectsRoutes />
+                    </Suspense>
+                ),
+            },
+            {
+                path: "/commiison/*",
+                element: (
+                    <Suspense fallback={<div>Loading ...</div>}>
+                        <CommissionRoutes />
+                    </Suspense>
+                ),
             },
             {
                 path: "/journal",
-                element: <CommissionRoutes />,
-            },
-            {
-                path: "/journal",
-                element: <Journal />,
+                element: (
+                    <Suspense fallback={<div>Loading ...</div>}>
+                        <Journal />
+                    </Suspense>
+                ),
             },
             {
                 path: "/scenographie",
-                element: <Scenographie />,
+                element: (
+                    <Suspense fallback={<div>Loading ...</div>}>
+                        <Scenographie />
+                    </Suspense>
+                ),
             },
             {
                 path: "/a-propos",
-                element: <About />,
+                element: (
+                    <Suspense fallback={<div>Loading ...</div>}>
+                        <About />
+                    </Suspense>
+                ),
             },
             {
                 path: "/contacts",
-                element: <Contact />,
+                element: (
+                    <Suspense fallback={<div>Loading ...</div>}>
+                        <Contact />
+                    </Suspense>
+                ),
             },
         ],
     },
 ]);
 
 function App() {
-    return <RouterProvider router={router} />;
+    return (
+        <React.StrictMode>
+            <RouterProvider router={router} />
+        </React.StrictMode>
+    );
 }
 
 export default App;
