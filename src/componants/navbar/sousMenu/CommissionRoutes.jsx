@@ -1,8 +1,14 @@
 import { Outlet, useRoutes } from "react-router-dom";
-import CommissionJardinsVersailles from "../../../pages/commissions/CommissionJardinsVersailles";
 import ClipsRoutes from "../SousSousMenu/ClipsRoutes";
-import CommisionTheatre from "../../../pages/commissions/CommisionTheatre";
 import CommissionsAcademieCesarsRoutes from "../SousSousMenu/CommissionsAcademieCesarsRoutes";
+import { lazy, Suspense } from "react";
+
+const CommissionJardinsVersailles = lazy(() =>
+    import("../../../pages/commissions/CommissionJardinsVersailles")
+);
+const CommisionTheatre = lazy(() =>
+    import("../../../pages/commissions/CommisionTheatre")
+);
 
 const CommissionRoutes = () => {
     const router = useRoutes([
@@ -12,7 +18,11 @@ const CommissionRoutes = () => {
         },
         {
             path: "jardins-versailles",
-            element: <CommissionJardinsVersailles />,
+            element: (
+                <Suspense fallback={<div>Loading ...</div>}>
+                    <CommissionJardinsVersailles />
+                </Suspense>
+            ),
         },
         {
             path: "clips/*",
@@ -20,7 +30,11 @@ const CommissionRoutes = () => {
         },
         {
             path: "theatre",
-            element: <CommisionTheatre />,
+            element: (
+                <Suspense fallback={<div>Loading ...</div>}>
+                    <CommisionTheatre />
+                </Suspense>
+            ),
         },
     ]);
     return router || <Outlet />;
