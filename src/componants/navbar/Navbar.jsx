@@ -10,6 +10,8 @@ function Navbar() {
                 <NavItem path='/' label='Accueil' />
                 <NavProject />
                 <NavCommisions />
+                <NavItem path='/journal' label='Journal' />
+                <NavItem path='/scenographie' label='Scénographie' />
                 <NavItem path='/a-propos' label='À propos' />
                 <NavItem path='/contacts' label='Contact' />
             </NavList>

@@ -6,6 +6,8 @@ import Contact from "./pages/contact/Contact";
 import Home from "./pages/home/Home";
 import ProjectsRoutes from "./componants/navbar/sousMenu/ProjectsRoutes";
 import CommissionRoutes from "./componants/navbar/sousMenu/CommissionRoutes";
+import Journal from "./pages/journal/Journal";
+import Scenographie from "./pages/scenographie/Scenographie";
 
 const Root = () => {
     return (
@@ -31,8 +33,16 @@ const router = createBrowserRouter([
                 element: <ProjectsRoutes />,
             },
             {
-                path: "/commissions/*",
+                path: "/journal",
                 element: <CommissionRoutes />,
+            },
+            {
+                path: "/journal",
+                element: <Journal />,
+            },
+            {
+                path: "/scenographie",
+                element: <Scenographie />,
             },
             {
                 path: "/a-propos",
