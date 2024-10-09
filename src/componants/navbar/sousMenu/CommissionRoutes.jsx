@@ -7,7 +7,7 @@ import CommissionsAcademieCesarsRoutes from "../SousSousMenu/CommissionsAcademie
 const CommissionRoutes = () => {
     const router = useRoutes([
         {
-            path: "accademie-des-cesars",
+            path: "accademie-des-cesars/*",
             element: <CommissionsAcademieCesarsRoutes />,
         },
         {
@@ -15,7 +15,7 @@ const CommissionRoutes = () => {
             element: <CommissionJardinsVersailles />,
         },
         {
-            path: "clips",
+            path: "clips/*",
             element: <ClipsRoutes />,
         },
         {

@@ -8,21 +8,25 @@ const NavCommisions = () => {
                 <NavList>
                     <NavItem
                         path='/commissions/accademie-des-cesars/*'
-                        label='Cérémonie des Césars'
+                        label='Accademie des cesars'
                         isParent
                     >
                         <NavList>
                             <NavItem
-                                path='/commissions/jardins-versailles'
-                                label='César des Lycéens'
+                                path='/commissions/accademie-des-cesars/soiree-revelation'
+                                label='Soirée Révélation'
                             />
                             <NavItem
-                                path='/commissions/clip/*'
+                                path='/commissions/accademie-des-cesars/dejeune-des-nommines'
                                 label='Déjeuné des Nomminés'
                             />
                             <NavItem
-                                path='/commissions/theatre'
-                                label='Soirée Révélation'
+                                path='/commissions/accademie-des-cesars/ceremonie-des-cesars'
+                                label='Cérémonie des Césars'
+                            />
+                            <NavItem
+                                path='/commissions/accademie-des-cesars/cesars-des-lyceens'
+                                label='César des lycéens'
                             />
                         </NavList>
                     </NavItem>
@@ -33,12 +37,12 @@ const NavCommisions = () => {
                     <NavItem path='/commissions/clips/*' label='Clips' isParent>
                         <NavList>
                             <NavItem
-                                path='/commissions/clips/clips-silver-night'
-                                label='Théatre'
+                                path='/commissions/clips/silver-night'
+                                label='Silver Night'
                             />
                             <NavItem
                                 path='/commissions/clips/sugar-pills'
-                                label='Théatre'
+                                label='Sugar Pills'
                             />
                         </NavList>
                     </NavItem>

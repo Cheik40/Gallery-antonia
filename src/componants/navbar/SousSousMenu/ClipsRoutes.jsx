@@ -6,7 +6,7 @@ import SugarPills from "../../../pages/commissions/clips/SugarPills";
 const ClipsRoutes = () => {
     const routes = useRoutes([
         {
-            path: "clips-silver-night",
+            path: "silver-night",
             element: <CommissionClipsSilverNight />,
         },
         {
