@@ -46,7 +46,7 @@ const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/commiison/*",
+                path: "/commissions/*",
                 element: (
                     <Suspense fallback={<div>Loading ...</div>}>
                         <CommissionRoutes />
@@ -92,7 +92,9 @@ const router = createBrowserRouter([
 function App() {
     return (
         <React.StrictMode>
-            <RouterProvider router={router} />
+            <Suspense fallback={<div>Loading...</div>}>
+                <RouterProvider router={router} />
+            </Suspense>
         </React.StrictMode>
     );
 }

@@ -1,8 +1,5 @@
-// src/components/CommissionsRoutes.js
 import { Outlet, useRoutes } from "react-router-dom";
-// import CommissionClipsSilverNight from "../../../pages/commissions/clips/CommissionClipsSilverNight";
-// import SugarPills from "../../../pages/commissions/clips/SugarPills";
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 
 const CommissionClipsSilverNight = lazy(() =>
     import("../../../pages/commissions/clips/CommissionClipsSilverNight")
@@ -15,11 +12,19 @@ const ClipsRoutes = () => {
     const routes = useRoutes([
         {
             path: "silver-night",
-            element: <CommissionClipsSilverNight />,
+            element: (
+                <Suspense fallback={<div>Loading ...</div>}>
+                    <CommissionClipsSilverNight />
+                </Suspense>
+            ),
         },
         {
             path: "sugar-pills",
-            element: <SugarPills />,
+            element: (
+                <Suspense fallback={<div>Loading ...</div>}>
+                    <SugarPills />
+                </Suspense>
+            ),
         },
     ]);
 
